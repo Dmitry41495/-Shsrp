@@ -23,3 +23,4 @@ while(i == 0)
 }
 
 System.Console.WriteLine($"Вторая цифра трехначного числа: {secondDigitOfTheNumber(number)}");
+
