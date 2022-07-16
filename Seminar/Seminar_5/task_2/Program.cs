@@ -1,59 +1,60 @@
-﻿// Напишите программу замены элементов массива: положитепльные элементы заменить на отриуательные и наоборот.
-
-System.Console.WriteLine("Введите количество элементов в массиве");
-int arraySize = checkingDataEntry();
-System.Console.WriteLine("Введите начало обдасти случайных чисел");
-int minValue = checkingDataEntry();
-System.Console.WriteLine("Введите конец обдасти случайных чисел");
-int maxValue = checkingDataEntry();
-int[] array;
-int[] reverseArray;
+﻿// Напишите программу замена элементов массива: положительные элементы замените на соответствующие отрицательные, и наоборот.
+//[-4, -8, 8, 2] -> [4, 8, -8, -2]
 
 
-int checkingDataEntry()
+System.Console.WriteLine("Введите длну массива");
+
+int arrayLength = 0;
+
+for (bool i = false; i == false;)
 {
-    int outputData;
-    while (!int.TryParse(Console.ReadLine(), out outputData))
+    while (!int.TryParse(Console.ReadLine(), out arrayLength))
     {
-        System.Console.WriteLine("Неверный ввод, введите число заново!");
+        System.Console.WriteLine("Неверный ввод, введите степень заново!");
     }
-    return outputData;
+    if (arrayLength > 0)
+    {
+        i = true;
+    }
+    else
+    {
+        System.Console.WriteLine("Неверный ввод, введите степень заново!");
+    }
 }
 
-int[] getArray(int sizeArray, int minValue, int maxValue)
+int[] createArray(int arrayLength, int maxValue, int minValue)
 {
-    int[] array = new int[sizeArray];
-    for (int i = 0; i < sizeArray; i++)
+    int[] array = new int[arrayLength];
+    for (int i = 0; i < arrayLength; i++)
     {
-        array[i] = new Random().Next(minValue, maxValue + 1);
+        array[i] = new Random().Next(maxValue, minValue +1);
     }
     return array;
 }
 
+
 void printArray(int[] array)
 {
-    System.Console.Write(string.Join(", ", array));
-}
-
-int[] replacingArrayElements(int[] array)
-{
-    int endOfCycle = array.Length;
-    int[] reverseArray = new int[endOfCycle];
-    for (int i = 0; i < endOfCycle; i++)
+    int size = array.Length;
+    for (int i = 0; i < size; i++)
     {
-        reverseArray[i] = -array[i];
+        Console.Write(string.Join("," array))
     }
-    return reverseArray;
 }
 
-array = getArray(arraySize, minValue, maxValue);
-reverseArray = replacingArrayElements(array);
+void replaceElements (int[] array)
+{
+    foreach(int elem in array)
+    {
+        elem = - elem;
+    }
+    
+}
 
-System.Console.Write("Дан массив: ");
-printArray(array);
-System.Console.WriteLine();
-System.Console.Write("Обратный массив: ");
-printArray(reverseArray);
+int[] array = createArray(arrayLength, 9, -9);
 
+Console.WriteLine(printArray(array));
 
+Console.WriteLine(printArray(replaceElements(array)));
 
+Console.WriteLine("clkwjc");
