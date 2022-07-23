@@ -15,24 +15,24 @@ int[,] SpiralFilling(int[,] array)
 {
     int count = 1;
     int arraySize = array.GetLength(0);
-    for(int i = 0; i < arraySize / 2; i++)
+    for (int i = 0; i < arraySize / 2; i++)
     {
-    for (int j = i; j < arraySize - i; j++)
-    {
-        array[i, j] = count++;
-    }
-    for (int k = i+1; k < arraySize - i; k++)
-    {
-        array[k, arraySize  -1 - i] = count++;
-    }
-    for (int n = arraySize-2-i; n>i; n--)
-    {
-        array[arraySize - 1 - i, n] = count++;
-    }
-    for(int m = arraySize-1-i; m>i; m--)
-    {
-        array[m,i] = count++;
-    }
+        for (int j = i; j < arraySize - i; j++)
+        {
+            array[i, j] = count++;
+        }
+        for (int k = i + 1; k < arraySize - i; k++)
+        {
+            array[k, arraySize - 1 - i] = count++;
+        }
+        for (int n = arraySize - 2 - i; n > i; n--)
+        {
+            array[arraySize - 1 - i, n] = count++;
+        }
+        for (int m = arraySize - 1 - i; m > i; m--)
+        {
+            array[m, i] = count++;
+        }
     }
     return array;
 }
